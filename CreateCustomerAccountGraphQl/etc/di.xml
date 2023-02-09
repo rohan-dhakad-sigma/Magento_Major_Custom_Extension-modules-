@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+
+    <preference for="Magento\CustomerGraphQl\Model\Resolver\CreateCustomer"
+                type="Task\CreateCustomerAccountGraphQl\Model\Resolver\CreateCustomer"/>
+
+    <preference for="Magento\CustomerGraphQl\Model\Resolver\UpdateCustomer"
+                type="Task\CreateCustomerAccountGraphQl\Model\Resolver\UpdateCustomer"/>
+
+    <!--<preference for="Magento\CustomerGraphQl\Model\Resolver\Customer"-->
+                <!--type="Task\CreateCustomerAccountGraphQl\Model\Resolver\Customer"/>-->
+
+    <!--<preference for="Magento\CustomerGraphQl\Model\Customer\ExtractCustomerData"-->
+                <!--type="Task\CreateCustomerAccountGraphQl\Model\Customer\ExtractCustomerData"/>-->
+
+</config>

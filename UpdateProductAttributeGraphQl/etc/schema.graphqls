@@ -1,0 +1,12 @@
+type Query {
+    updateProductAttribute (
+    product_id: Int! @doc(description:"Provide sku of product")
+    product_unit:String! @doc(description:"Provide unit of product")
+    ): UpdateProductAttributeOutput
+    @resolver(class:"Task\\UpdateProductAttributeGraphQl\\Model\\Resolver\\ProductAttribute")
+    @doc(description:"Update product attribute")
+}
+
+type UpdateProductAttributeOutput @doc(description: "Contains the result of the updateProductAttribute query.") {
+    product_unit: String @doc(description:"getting product unit as output")
+}

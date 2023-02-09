@@ -1,0 +1,11 @@
+type Query {
+    getCustomOrderComment (
+        order_id: Int! @doc(description:"Provide Order id for getting order comment")
+        ): GetCustomOrderCommentOutput
+        @resolver(class:"Task\\GetOrderCommentGraphQl\\Model\\Resolver\\OrderComment")
+        @doc(description:"Get Order comment")
+}
+
+type GetCustomOrderCommentOutput @doc(description: "Contains the result of the `getOrderComment` query.") {
+    order_comment: String @doc(description:"Get Order comment output")
+}

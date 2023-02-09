@@ -1,0 +1,18 @@
+type Query {
+    updateProductComment (
+        order_id: Int!
+        filter: ProductAttributeFilterInput @doc(description: "The product attributes to search for and return.")
+    ): UpdateProductCommentOutput
+    @resolver (class: "Task\\UpdateProductCommentGraphQl\\Model\\Resolver\\Products")
+    @doc(description: "Update comment of products that match the criteria specified in filter attributes.")
+
+}
+
+input ProductAttributeFilterInput @doc(description: "Defines the filters to be used. A filter contains at least one attribute, a comparison operator, and the value that is being updated for.") {
+    sku: FilterTypeInput @doc(description: "A number or code assigned to a product to identify the product, options, price, and manufacturer.")
+    product_comment: FilterTypeInput @doc(description: "A number or code assigned to a product to identify the product, options, price, and manufacturer.")
+}
+
+type UpdateProductCommentOutput @doc(description: "Contains the result of the updateProductComment query.") {
+    result: String @doc(description:"Product comment output")
+}

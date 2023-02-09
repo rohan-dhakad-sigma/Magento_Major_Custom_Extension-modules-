@@ -1,0 +1,12 @@
+type Query {
+    updateCompanyName (
+        id: Int! @doc(description:"Provide Customer Email")
+        company_name: String! @doc(description:"Updating Company Name Input")
+    ): UpdateCompanyNameOutput
+    @resolver(class:"Task\\UpdateCompanyNameGraphQl\\Model\\Resolver\\UpdateCompany")
+    @doc(description:"Show Customer Last Purchased Item")
+}
+
+type UpdateCompanyNameOutput @doc(description: "Contains the result of the `updateCompanyName` query.") {
+    company_name: String @doc(description:"Updating Company Name Output")
+}

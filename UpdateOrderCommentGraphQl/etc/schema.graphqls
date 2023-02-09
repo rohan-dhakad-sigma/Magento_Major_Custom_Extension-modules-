@@ -1,0 +1,12 @@
+type Query {
+    updateOrderComment (
+        order_id: Int! @doc(description:"Provide Order id")
+        order_comment: String! @doc(description:"Updating Order comment input")
+    ): UpdateOrderCommentOutput
+    @resolver(class:"Task\\UpdateOrderCommentGraphQl\\Model\\Resolver\\UpdateOrder")
+    @doc(description:"Update Order comment")
+}
+
+type UpdateOrderCommentOutput @doc(description: "Contains the result of the UpdateOrderComment query.") {
+    order_comment: String @doc(description:"Updating Order comment output")
+}

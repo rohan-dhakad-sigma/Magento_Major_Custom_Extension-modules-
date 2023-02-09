@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<config>
+    <module name="Task_UpdateProductAttributeGraphQl" setup_version="1.0.0">
+        <sequence>
+            <module name="Magento_Backend"/>
+            <module name="Magento_GraphQl"/>
+            <module name="Magento_Catalog"/>
+        </sequence>
+    </module>
+</config>

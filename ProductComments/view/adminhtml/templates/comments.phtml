@@ -1,0 +1,16 @@
+<?php
+        $orderId = $this->getRequest()->getParam('order_id');
+        $objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+        $orderObj= $objectManager->create(\Magento\Sales\Model\OrderFactory::class)->create()->load($orderId);
+        $quoteId=$orderObj->getQuoteId();
+        $qouteObj= $objectManager->create(\Magento\Quote\Model\QuoteFactory::class)->create()->load($quoteId);
+        $allItems=$qouteObj->getAllItems();
+        $comment='';
+        ?>
+        <h2>Product Comments</h2>
+        <?php
+        foreach($allItems as $item){
+            $comment=$item->getProductComments()."<br>";
+            echo $comment."<br>";
+        }
+?>
